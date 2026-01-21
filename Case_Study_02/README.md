@@ -1,39 +1,34 @@
-📊 Temel Bulgular ve İçgörüler
-Yapılan veri analizi sonucunda aşağıdaki kritik bulgulara ulaşılmıştır:
+# ENERJİ PERAKENDE SEKTÖRÜ: VERİ ANALİTİĞİ VE STRATEJİK KARAR DESTEK PROJESİ
 
+**Ahmet Çalık Vakfı | İleri Veri Analitiği Eğitimi | Case Study 02**
 
-Mevsimsel Etki: Elektrik tüketimi, tarımsal sulama ve soğutma ihtiyacı nedeniyle Temmuz ve Ağustos aylarında zirve yapmaktadır.
+---
 
-Bölgesel Farklılıklar:
+## PROJE HAKKINDA
 
+Bu çalışma, enerji perakende sektöründe faaliyet gösteren bir şirketin Amasya ilindeki (Gümüşhacıköy, Göynücek, Hamamözü) operasyonel verilerini analiz etmek amacıyla hazırlanmıştır. Proje, ham veriyi işleyerek anlamlı içgörülere dönüştürmeyi ve şirketin karlılığını artıracak stratejik kararlar üretmeyi hedefler.
 
-Gümüşhacıköy, en yüksek ortalama tüketime ve ticari abone yoğunluğuna sahiptir.
+> **Temel Hedef:** Müşteri tüketim davranışlarını segmentlere ayırmak, bölgesel verimliliği ölçmek ve tahsilat risklerini minimize edecek veri odaklı aksiyon planları oluşturmaktır.
 
+---
 
-Hamamözü, en düşük tüketime sahip olup ağırlıklı olarak mesken abonelerinden oluşmaktadır.
+## PROJE MİMARİSİ VE DOSYA YAPISI
 
-Ödeme Riski: Müşterilerin yaklaşık %27.2'si ödemelerini vade tarihinden sonra yapmaktadır. Bu durum nakit akışı optimizasyonu gerektirmektedir.
+Proje, yeniden üretilebilir (reproducible) veri bilimi standartlarına uygun olarak aşağıdaki dizin yapısında kurgulanmıştır:
 
-🛠 Kurulum ve Çalıştırma
-Bu projeyi yerel ortamınızda çalıştırmak için aşağıdaki adımları izleyebilirsiniz:
-
-Gerekli kütüphaneleri yükleyin:
-
-Bash
-pip install -r requirements.txt
-Notebookları sırasıyla çalıştırın:
-
-Önce notebook_01 (Veriyi temizleyip CSV oluşturur).
-
-Sonra notebook_02 ve notebook_03.
-
-🧰 Kullanılan Teknolojiler
-Python 3.10+
-
-Pandas: Veri manipülasyonu ve analizi için.
-
-Matplotlib & Seaborn: Veri görselleştirme için.
-
-Openpyxl: Excel dosyalarını okumak için.
-
-Hazırlayan: [Berra Nur Ozyurt]
+```text
+CASE_STUDY_02/
+│
+├── data/
+│   └── elektrik_veri.xlsx          # Analize konu olan ham veri seti
+│
+├── notebooks/
+│   ├── 01_veri_kesfi.ipynb         # Veri temizliği, kalite kontrolü ve önişleme
+│   ├── 02_gorsellestirme.ipynb     # Keşifçi veri analizi (EDA) ve görselleştirme
+│   └── 03_stratejik_analiz.ipynb   # İş zekası raporlaması ve aksiyon önerileri
+│
+├── outputs/
+│   └── figures/                    # Raporlamada kullanılan yüksek çözünürlüklü grafikler
+│
+├── requirements.txt                # Proje bağımlılıkları ve kütüphane sürümleri
+└── README.md                       # Proje dokümantasyonu
