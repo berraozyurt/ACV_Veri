@@ -11,24 +11,66 @@ Bu çalışma, enerji perakende sektöründe faaliyet gösteren bir şirketin Am
 > **Temel Hedef:** Müşteri tüketim davranışlarını segmentlere ayırmak, bölgesel verimliliği ölçmek ve tahsilat risklerini minimize edecek veri odaklı aksiyon planları oluşturmaktır.
 
 ---
+# METODOLOJİ VE ANALİZ ADIMLARI
 
-## PROJE MİMARİSİ VE DOSYA YAPISI
+Proje üç ana fazda gerçekleştirilmiştir:
 
-Proje, yeniden üretilebilir (reproducible) veri bilimi standartlarına uygun olarak aşağıdaki dizin yapısında kurgulanmıştır:
+## 1. Veri Hazırlığı ve Kalite Kontrolü (Notebook 01)
+  Çoklu Excel sayfalarının entegrasyonu ve veri tabanı formatına dönüştürülmesi.
 
-```text
-CASE_STUDY_02/
-│
-├── data/
-│   └── elektrik_veri.xlsx          # Analize konu olan ham veri seti
-│
-├── notebooks/
-│   ├── 01_veri_kesfi.ipynb         # Veri temizliği, kalite kontrolü ve önişleme
-│   ├── 02_gorsellestirme.ipynb     # Keşifçi veri analizi (EDA) ve görselleştirme
-│   └── 03_stratejik_analiz.ipynb   # İş zekası raporlaması ve aksiyon önerileri
-│
-├── outputs/
-│   └── figures/                    # Raporlamada kullanılan yüksek çözünürlüklü grafikler
-│
-├── requirements.txt                # Proje bağımlılıkları ve kütüphane sürümleri
-└── README.md                       # Proje dokümantasyonu
+  Veri tutarlılık testleri (Negatif tüketim, mükerrer kayıt ve null değer kontrolü).
+
+  Zaman serisi analizi için tarih/saat öznitelik çıkarımı.
+
+## 2. Görselleştirme ve Desen Analizi (Notebook 02)
+  Mevsimsellik Analizi: Yıl içi tüketim dalgalanmalarının tespiti.
+
+  Aykırı Değer (Outlier) Tespiti: Standart sapma ve IQR yöntemleri ile olağandışı tüketimlerin belirlenmesi.
+
+  Bölgesel Karşılaştırma: İlçe bazlı enerji yoğunluk haritalarının çıkarılması.
+
+## 3. Stratejik Hikayeleştirme (Notebook 03)
+  Müşteri Segmentasyonu: Abonelerin tüketim hacimlerine göre (Düşük/Orta/Yüksek) sınıflandırılması.
+
+  Risk Analizi: Ödeme vadeleri ve gecikme oranlarının finansal etkisi.
+
+  Aksiyon Planı: Veri bulgularına dayalı iş önerileri.
+
+
+
+#  TEMEL BULGULAR VE İÇGÖRÜLER
+Yapılan analizler sonucunda aşağıdaki kritik iş zekası verilerine ulaşılmıştır:
+
+
+### Analiz Alanı                  Temel Bulgu
+
+#### Mevsimsel Etki              Tüketim, tarımsal sulama ve iklimlendirme ihtiyacı nedeniyle Temmuz ve Ağustos aylarında zirve yapmaktadır.
+
+#### Bölgesel Fark               Gümüşhacıköy, ticari yoğunluk sebebiyle en yüksek tüketim ortalamasına sahipken; Hamamözü mesken ağırlıklı düşük profil sergilemektedir.
+
+#### Finansal Risk              Müşterilerin %27.2'si ödemelerini vade tarihinden sonra yapmaktadır. Bu durum nakit akışı optimizasyonu gerektirmektedir.
+
+
+
+
+
+# KURULUM VE ÇALIŞTIRMA TALİMATLARI
+
+Projenin yerel ortamda hatasız çalışması için aşağıdaki adımları izleyin:
+
+### 1. Gerekli Kütüphanelerin Yüklenmesi Terminal veya Komut İstemi üzerinden proje dizinine giderek bağımlılıkları yükleyin:
+
+    pip install -r requirements.txt
+
+
+2. Notebook Çalıştırma Sırası Analiz akışının bozulmaması için dosyaları şu sırayla çalıştırın:
+
+      notebook_01_veri_kesfi.ipynb (Temiz veri setini oluşturur)
+
+      notebook_02_gorsellestirme.ipynb
+
+      notebook_03_stratejik_analiz.ipynb
+
+
+
+  ##   Hazırlayan: [Berra Nur Ozyurt]
