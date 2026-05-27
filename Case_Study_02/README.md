@@ -73,4 +73,4 @@ Projenin yerel ortamda hatasız çalışması için aşağıdaki adımları izle
 
 
 
-  ##   Hazırlayan: [Berra Nur Ozyurt]
+  ##   Hazırlayan: Berra Nur Ozyurt
