@@ -1,76 +1,106 @@
-# ENERJİ PERAKENDE SEKTÖRÜ: VERİ ANALİTİĞİ VE STRATEJİK KARAR DESTEK PROJESİ
+# Enerji Perakende Sektöründe Veri Analitiği ve Stratejik Karar Destek
 
 **Ahmet Çalık Vakfı | İleri Veri Analitiği Eğitimi | Case Study 02**
 
----
+Bu çalışma, enerji perakende sektöründe faaliyet gösteren bir şirketin Amasya ilindeki Gümüşhacıköy, Göynücek ve Hamamözü ilçelerine ait operasyonel verilerini analiz etmek amacıyla hazırlanmıştır.
 
-## PROJE HAKKINDA
+Projenin amacı; müşteri tüketim davranışlarını incelemek, bölgeler arasındaki farklılıkları değerlendirmek, ödeme risklerini analiz etmek ve elde edilen bulgular üzerinden veri odaklı iş önerileri geliştirmektir.
 
-Bu çalışma, enerji perakende sektöründe faaliyet gösteren bir şirketin Amasya ilindeki (Gümüşhacıköy, Göynücek, Hamamözü) operasyonel verilerini analiz etmek amacıyla hazırlanmıştır. Proje, ham veriyi işleyerek anlamlı içgörülere dönüştürmeyi ve şirketin karlılığını artıracak stratejik kararlar üretmeyi hedefler.
+## Proje Kapsamı
 
-> **Temel Hedef:** Müşteri tüketim davranışlarını segmentlere ayırmak, bölgesel verimliliği ölçmek ve tahsilat risklerini minimize edecek veri odaklı aksiyon planları oluşturmaktır.
+Çalışma üç ana aşamadan oluşmaktadır:
 
----
-# METODOLOJİ VE ANALİZ ADIMLARI
+### 1. Veri Keşfi ve Hazırlığı
 
-Proje üç ana fazda gerçekleştirilmiştir:
+Bu aşamada:
 
-## 1. Veri Hazırlığı ve Kalite Kontrolü (Notebook 01)
-  Çoklu Excel sayfalarının entegrasyonu ve veri tabanı formatına dönüştürülmesi.
+* Çoklu Excel sayfaları incelenmiş ve analize uygun biçimde bir araya getirilmiştir.
+* Eksik değer, mükerrer kayıt ve veri tutarlılığı kontrolleri yapılmıştır.
+* Tarih ve saat bilgileri analiz için uygun özniteliklere dönüştürülmüştür.
+* Sonraki analizlerde kullanılacak temiz veri yapısı hazırlanmıştır.
 
-  Veri tutarlılık testleri (Negatif tüketim, mükerrer kayıt ve null değer kontrolü).
+İlgili notebook:
 
-  Zaman serisi analizi için tarih/saat öznitelik çıkarımı.
+```text
+Case_Study2_Veri_Kesfi.ipynb
+```
 
-## 2. Görselleştirme ve Desen Analizi (Notebook 02)
-  Mevsimsellik Analizi: Yıl içi tüketim dalgalanmalarının tespiti.
+### 2. Veri Görselleştirme ve Desen Analizi
 
-  Aykırı Değer (Outlier) Tespiti: Standart sapma ve IQR yöntemleri ile olağandışı tüketimlerin belirlenmesi.
+Bu aşamada:
 
-  Bölgesel Karşılaştırma: İlçe bazlı enerji yoğunluk haritalarının çıkarılması.
+* Tüketim değerlerinin zamana bağlı değişimi incelenmiştir.
+* Mevsimsel tüketim desenleri değerlendirilmiştir.
+* Olağandışı tüketim değerleri incelenmiştir.
+* İlçeler arasındaki tüketim farklılıkları karşılaştırılmıştır.
 
-## 3. Stratejik Hikayeleştirme (Notebook 03)
-  Müşteri Segmentasyonu: Abonelerin tüketim hacimlerine göre (Düşük/Orta/Yüksek) sınıflandırılması.
+İlgili notebook:
 
-  Risk Analizi: Ödeme vadeleri ve gecikme oranlarının finansal etkisi.
+```text
+Case_Study2_Veri_Gorsellestirme.ipynb
+```
 
-  Aksiyon Planı: Veri bulgularına dayalı iş önerileri.
+### 3. Stratejik Analiz ve Öneriler
 
+Bu aşamada:
 
+* Müşteriler tüketim hacimlerine göre segmentlere ayrılmıştır.
+* Ödeme davranışları ve gecikme oranları değerlendirilmiştir.
+* Analiz bulgularına dayalı stratejik öneriler geliştirilmiştir.
 
-#  TEMEL BULGULAR VE İÇGÖRÜLER
-Yapılan analizler sonucunda aşağıdaki kritik iş zekası verilerine ulaşılmıştır:
+İlgili notebook:
 
+```text
+Case_study2_Stratejik_Analiz_ve_Oneriler.ipynb
+```
 
-### Analiz Alanı                  Temel Bulgu
+## Temel Bulgular
 
-#### Mevsimsel Etki              Tüketim, tarımsal sulama ve iklimlendirme ihtiyacı nedeniyle Temmuz ve Ağustos aylarında zirve yapmaktadır.
+| Analiz Alanı       | Elde Edilen Bulgu                                                                                                              |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
+| Mevsimsel etki     | Tüketim değerlerinin Temmuz ve Ağustos aylarında yükseldiği gözlemlenmiştir.                                                   |
+| Bölgesel farklılık | Gümüşhacıköy en yüksek tüketim ortalamasına sahip bölge olarak öne çıkarken, Hamamözü daha düşük tüketim profili göstermiştir. |
+| Finansal risk      | Müşterilerin `%27.2` oranındaki kısmının ödemelerini vade tarihinden sonra gerçekleştirdiği belirlenmiştir.                    |
 
-#### Bölgesel Fark               Gümüşhacıköy, ticari yoğunluk sebebiyle en yüksek tüketim ortalamasına sahipken; Hamamözü mesken ağırlıklı düşük profil sergilemektedir.
+## Kullanılan Yöntemler
 
-#### Finansal Risk              Müşterilerin %27.2'si ödemelerini vade tarihinden sonra yapmaktadır. Bu durum nakit akışı optimizasyonu gerektirmektedir.
+Çalışmada aşağıdaki veri analizi yaklaşımları kullanılmıştır:
 
+* Veri temizleme ve kalite kontrolü
+* Eksik değer ve mükerrer kayıt incelemesi
+* Zaman temelli analiz
+* Mevsimsellik değerlendirmesi
+* Aykırı değer incelemesi
+* Bölgesel karşılaştırma
+* Müşteri segmentasyonu
+* Risk analizi
+* Stratejik öneri geliştirme
 
+## Dosyalar
 
+```text
+Case_Study_02/
+├── Case_Study2_Veri_Kesfi.ipynb
+├── Case_Study2_Veri_Gorsellestirme.ipynb
+├── Case_study2_Stratejik_Analiz_ve_Oneriler.ipynb
+├── requirements.txt
+└── README.md
+```
 
+## Kurulum ve Çalıştırma
 
-# KURULUM VE ÇALIŞTIRMA TALİMATLARI
+Gerekli Python kütüphanelerini yüklemek için bu klasör içinde aşağıdaki komut çalıştırılabilir:
 
-Projenin yerel ortamda hatasız çalışması için aşağıdaki adımları izleyin:
+```bash
+pip install -r requirements.txt
+```
 
-### 1. Gerekli Kütüphanelerin Yüklenmesi Terminal veya Komut İstemi üzerinden proje dizinine giderek bağımlılıkları yükleyin:
+Analiz akışını takip etmek için notebook dosyaları şu sırayla çalıştırılmalıdır:
 
-    pip install -r requirements.txt
+1. `Case_Study2_Veri_Kesfi.ipynb`
+2. `Case_Study2_Veri_Gorsellestirme.ipynb`
+3. `Case_study2_Stratejik_Analiz_ve_Oneriler.ipynb`
 
+## Not
 
-2. Notebook Çalıştırma Sırası Analiz akışının bozulmaması için dosyaları şu sırayla çalıştırın:
-
-      notebook_01_veri_kesfi.ipynb (Temiz veri setini oluşturur)
-
-      notebook_02_gorsellestirme.ipynb
-
-      notebook_03_stratejik_analiz.ipynb
-
-
-
-  ##   Hazırlayan: Berra Nur Ozyurt
+Bu çalışma, Ahmet Çalık Vakfı İleri Veri Analitiği Eğitimi kapsamında gerçekleştirilen bir case study projesidir. Repository, çalışmanın analiz sürecini ve geliştirilen veri odaklı önerileri portföy amacıyla düzenli biçimde sunmaktadır.
